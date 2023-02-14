@@ -1,1 +1,1 @@
-# ayesha-album
+# album
