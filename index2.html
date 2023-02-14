@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Photo Album Grid</title>
+    <style>
+      body {
+        background-color: #fafafa;
+        font-family: sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 10px;
+        margin: 50px auto;
+        max-width: 1000px;
+      }
+
+      .photo-album {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .photo-album:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .photo-album img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Photo Album Grid</h1>
+
+    <div class="photo-grid"></div>
+
+    <script>
+      const photoGrid = document.querySelector('.photo-grid');
+
+      function shuffle(array) {
+        let currentIndex = array.length;
+        let temporaryValue, randomIndex;
+        while (0 !== currentIndex) {
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex -= 1;
+          temporaryValue = array[currentIndex];
+          array[currentIndex] = array[randomIndex];
+          array[randomIndex] = temporaryValue;
+        }
+        return array;
+      }
+
+      function displayPhotoGrid() {
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            const images = JSON.parse(xhr.responseText);
+            const shuffledImages = shuffle(images).slice(0, 5);
+            shuffledImages.forEach(image => {
+              const photoAlbum = document.createElement('div');
+              photoAlbum.classList.add('photo-album');
+              photoAlbum.style.backgroundColor = '#f7e8e8';
+              photoAlbum.style.border = '1px solid #dbd0d0';
+              photoAlbum.dataset.src = image;
+
+              const img = document.createElement('img');
+              img.src = image;
+              photoAlbum.appendChild(img);
+
+              photoGrid.appendChild(photoAlbum);
+            });
+          }
+        };
+        xhr.open('GET', './images.json', true);
+        xhr.send();
+      }
+
+      displayPhotoGrid();
+
+      // Add event listeners for interactivity
+      photoGrid.addEventListener('click', event => {
+        const photoAlbum = event.target.closest('.photo-album');
+        if (photoAlbum) {
+          window.open(photoAlbum.dataset.src, '_blank');
+        }
+      });
+    </script>
+  </body>
+</html>

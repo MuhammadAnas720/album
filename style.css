@@ -1,0 +1,124 @@
+body {
+  background-color: #F2D2E2;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+header {
+  background-color: #FD90A0;
+  padding: 30px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: normal;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px;
+  background-color: #faedef;
+
+}
+
+.thumbnail {
+  width: 30%;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.thumbnail:hover .overlay {
+  opacity: 1;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay h3 {
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  margin: 0;
+}
+
+.button {
+  display: inline-block;
+  background-color: #FD90A0;
+  color: #FFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 22px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#upload-form {
+  background-color: #FFF;
+  padding: 30px;
+  margin: 0;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#upload-form h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 10px 0 20px;
+}
+
+
+/* valentines.css */
+
+.valentines-wishes {
+  background-color: #fce8ec;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.valentines-wishes h2 {
+  font-size: 32px !important;
+  color: #e83e8c;
+  margin-bottom: 0;
+}
+
+.valentines-wishes p {
+  font-size: 24px;
+  color: #d1356d;
+  line-height: 1.5;
+}
+
+.photo-grid-center {
+  justify-content: center;
+  margin: 0;
+  width: 300px;
+  left: 50%;
+}

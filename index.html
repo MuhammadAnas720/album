@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Photo Album Grid</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #fafafa;
+    }
+    
+    /* Photo Album Grid Styles */
+    .photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+
+    .photo-album {
+        position: relative;
+        width: 250px;
+        height: 300px;
+        margin: 20px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+      }
+    
+    .photo-album {
+      position: relative;
+      width: 250px;
+      height: 300px;
+      margin: 20px;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    
+    .photo-album:hover {
+      transform: scale(1.05);
+    }
+    
+    .photo-album img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit:cover;
+    }
+    
+    .photo-album:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fbd5e5;
+      opacity: 0.5;
+      z-index: -1;
+      transition: all 0.3s ease-out;
+    }
+    
+    .photo-album:hover:before {
+      opacity: 0;
+    }
+    
+  
+  </style>
+</head>
+<body>
+    <header>
+        <h1>Ayesha Anas Photo Album</h1>
+    </header>
+    <div id="upload-form">
+        <!-- <h2>Upload Your Own Photos</h2>
+        <form>
+          <label for="file-input" class="button">
+            Choose File
+            <input type="file" id="file-input" accept="image/*" multiple>
+          </label>
+          <button type="submit" class="button">Upload</button>
+        </form> -->
+      <div class="valentines-wishes">
+        <h2>Happy Valentine's Day, Ayesha!</h2>
+        </div>
+        <!-- <div class="photo-grid-center">
+        <div class="photo-album photo-album-2 " data-src="path/to/image2.jpg">
+            <img src="images/2.jpg" alt="Photo Album 2">
+            </div>
+        </div> -->
+      <p class="button">Thank you for making every day special 🤍 <br> Love u smmm 🤍🤍</p>
+      <h2>The plan's to use this website as our very own web album hahhahahaha</h2>
+    </div>
+
+      
+    <div id="gallery">
+        <!-- Dynamically generated image thumbnails will go here -->
+        <div class="photo-grid">
+            <div class="photo-album" data-src="path/to/image1.png">
+            <img src="images/1.png" alt="Photo Album 1">
+            </div>
+            <div class="photo-album" data-src="path/to/image2.png">
+            <img src="images/2.png" alt="Photo Album 2">
+            </div>
+            <div class="photo-album" data-src="path/to/image3.png">
+            <img src="images/3.png" alt="Photo Album 3">
+            </div>
+            <div class="photo-album" data-src="path/to/image4.png">
+            <img src="images/4.png" alt="Photo Album 4">
+            </div>
+            <div class="photo-album" data-src="path/to/image5.png">
+            <img src="images/5.png" alt="Photo Album 5">
+            </div>
+            <div class="photo-album" data-src="path/to/image1.png">
+            <img src="images/6.png" alt="Photo Album 1">
+            </div>
+            <div class="photo-album" data-src="path/to/image2.png">
+            <img src="images/7.png" alt="Photo Album 2">
+            </div>
+            <div class="photo-album" data-src="path/to/image3.png">
+            <img src="images/8.png" alt="Photo Album 3">
+            </div>
+            <div class="photo-album" data-src="path/to/image4.png">
+            <img src="images/9.png" alt="Photo Album 4">
+            </div>
+            <div class="photo-album" data-src="path/to/image5.png">
+            <img src="images/10.png" alt="Photo Album 5">
+            </div>
+            <div class="photo-album" data-src="path/to/image1.png">
+            <img src="images/11.png" alt="Photo Album 1">
+            </div>
+            <div class="photo-album" data-src="path/to/image2.png">
+            <img src="images/12.png" alt="Photo Album 2">
+            </div>
+            <div class="photo-album" data-src="path/to/image3.png">
+            <img src="images/13.png" alt="Photo Album 3">
+            </div>
+            <div class="photo-album" data-src="path/to/image4.png">
+            <img src="images/14.png" alt="Photo Album 4">
+            </div>
+            <div class="photo-album" data-src="path/to/image5.png">
+            <img src="images/15.png" alt="Photo Album 5">
+            </div>
+            
+        </div>
+  </div>
+  <script src="script.js"></script>
+
+</body>
+</html>
